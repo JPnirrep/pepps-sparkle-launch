@@ -3,7 +3,7 @@ const TestimonialSection = () => {
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-6 max-w-3xl text-center">
         <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-16 text-noir-doux">
-          Elle a osé. Elle a transformé. L'histoire de Patricia.
+          Elle a osé. Elle s'est libérée. Le témoignage de Patricia.
         </h2>
         
         <div className="bg-white p-8 pt-16 rounded-xl shadow-lg relative">
