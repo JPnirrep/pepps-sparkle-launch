@@ -71,8 +71,8 @@ const OfferSection = () => {
                 Le Pack "Décollage PEPPS"
               </h3>
               <img 
-                src="https://placehold.co/400x300/A8D8C7/1E1E1E?text=Pack+Décollage" 
-                alt="Pack Décollage PEPPS" 
+                src="/src/assets/visuel_bundle.png" 
+                alt="Pack Décollage PEPPS - Livret + Coaching avec Sandrina" 
                 className="rounded-lg shadow-md w-full mb-4"
               />
             </div>
