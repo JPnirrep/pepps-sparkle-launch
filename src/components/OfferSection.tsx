@@ -8,9 +8,9 @@ const OfferSection = () => {
           Choisissez la solution qui vous convient
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Offre 1: Livret seul */}
-          <div className="bg-blanc-creme rounded-xl p-8 shadow-lg">
+          <div className="bg-blanc-creme rounded-xl p-8 shadow-md opacity-90 hover:opacity-100 transition-all duration-300">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-montserrat font-bold mb-4 text-noir-doux">
                 Le Livret PEPPS
@@ -59,10 +59,10 @@ const OfferSection = () => {
           </div>
 
           {/* Offre 2: Pack Décollage */}
-          <div className="bg-gradient-to-br from-vert-eau-doux/10 to-corail-pepps/10 rounded-xl p-8 shadow-lg border-2 border-corail-pepps/20 relative">
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <span className="bg-corail-pepps text-white px-4 py-1 rounded-full text-sm font-bold">
-                RECOMMANDÉ
+          <div className="bg-gradient-to-br from-vert-eau-doux/15 to-corail-pepps/15 rounded-xl p-8 shadow-2xl border-2 border-corail-pepps/30 relative transform md:scale-105 hover:scale-110 transition-all duration-300 hover:shadow-corail-pepps/20">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span className="bg-corail-pepps text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
+                ⭐ RECOMMANDÉ ⭐
               </span>
             </div>
             
