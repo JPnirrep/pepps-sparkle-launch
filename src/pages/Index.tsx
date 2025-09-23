@@ -4,6 +4,7 @@ import OfferSection from "@/components/OfferSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import QualificationSection from "@/components/QualificationSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <QualificationSection />
         <FinalCTASection />
       </main>
+      <Footer />
     </div>
   );
 };
