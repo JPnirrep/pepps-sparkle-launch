@@ -61,7 +61,7 @@ const HeroSection = () => {
           muted 
           loop
         >
-          <source src="https://lafabriquepepps.fr/VIDEOS/LP_webi_page1.mp4" type="video/mp4" />
+          <source src="https://lafabriquepepps.fr/VIDEOS/LP_WEBI_page1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
