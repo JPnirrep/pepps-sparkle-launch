@@ -10,7 +10,7 @@ const OfferSection = () => {
         
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Offre 1: Livret seul */}
-          <div className="bg-blanc-creme rounded-xl p-8 shadow-md opacity-90 hover:opacity-100 transition-all duration-300">
+          <div className="bg-blanc-creme rounded-xl p-8 shadow-md opacity-75 hover:opacity-90 transition-all duration-300 transform scale-95">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-montserrat font-bold mb-4 text-noir-doux">
                 Le Livret PEPPS
