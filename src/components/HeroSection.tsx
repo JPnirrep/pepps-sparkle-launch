@@ -70,7 +70,7 @@ const HeroSection = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-noir-doux opacity-50 z-10"></div>
       
       <div className="relative z-20 p-6 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-montserrat font-bold leading-tight mb-4">
+        <h1 className="text-4xl md:text-6xl font-montserrat font-black leading-tight mb-4 text-blanc-creme">
           Votre sensibilité n'est pas un obstacle. C'est votre plus grande force.
         </h1>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-lato">
