@@ -10,6 +10,14 @@ const HeroSection = () => {
     
     if (!video || !section) return;
 
+    // Seamless loop handler
+    const handleTimeUpdate = () => {
+      // Restart video slightly before it ends to avoid black screen
+      if (video.currentTime >= video.duration - 0.1) {
+        video.currentTime = 0;
+      }
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -40,10 +48,13 @@ const HeroSection = () => {
       }
     };
 
+    // Add seamless loop event listener
+    video.addEventListener('timeupdate', handleTimeUpdate);
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       observer.disconnect();
+      video.removeEventListener('timeupdate', handleTimeUpdate);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
@@ -60,6 +71,7 @@ const HeroSection = () => {
           autoPlay 
           muted 
           loop
+          preload="auto"
         >
           <source src="https://lafabriquepepps.fr/VIDEOS/LP_WEBI_page1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
