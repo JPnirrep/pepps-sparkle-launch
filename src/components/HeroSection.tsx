@@ -55,7 +55,7 @@ const HeroSection = () => {
         <video 
           ref={videoRef}
           poster="https://placehold.co/1920x1080/F9F7F5/333333?text=Chargement..." 
-          className="absolute z-0 w-full h-full hero-video-fitted" 
+          className="absolute z-0 w-auto min-w-full min-h-full max-w-none hero-video" 
           playsInline 
           autoPlay 
           muted 
