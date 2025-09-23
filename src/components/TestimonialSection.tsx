@@ -2,15 +2,15 @@ const TestimonialSection = () => {
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-6 max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-8 text-noir-doux">
+        <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-16 text-noir-doux">
           Elle a osé. Elle a transformé. L'histoire de Patricia.
         </h2>
         
-        <div className="bg-white p-8 rounded-xl shadow-lg relative">
+        <div className="bg-white p-8 pt-16 rounded-xl shadow-lg relative">
           <img 
             src="https://placehold.co/100x100/FF6F61/F9F7F5?text=P" 
             alt="Photo de Patricia" 
-            className="w-24 h-24 rounded-full mx-auto -mt-20 mb-4 border-4 border-white"
+            className="w-24 h-24 rounded-full mx-auto -mt-20 mb-6 border-4 border-white"
           />
           
           <blockquote className="text-xl md:text-2xl italic font-lato text-gris-profond">
