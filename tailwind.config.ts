@@ -13,12 +13,24 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        /* Couleurs PEPPS */
+        "corail-pepps": "hsl(var(--corail-pepps))",
+        "gris-profond": "hsl(var(--gris-profond))",
+        "noir-doux": "hsl(var(--noir-doux))",
+        "blanc-creme": "hsl(var(--blanc-creme))",
+        "vert-eau-doux": "hsl(var(--vert-eau-doux))",
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
