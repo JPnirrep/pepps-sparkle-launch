@@ -1,9 +1,59 @@
+import { useEffect, useRef } from 'react';
+
 const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const section = sectionRef.current;
+    
+    if (!video || !section) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Restart video from beginning when entering view
+            video.currentTime = 0;
+            video.play().catch(() => {
+              // Handle autoplay restrictions
+            });
+          } else {
+            // Pause when leaving view
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of section is visible
+    );
+
+    observer.observe(section);
+
+    // Handle page visibility changes
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        video.pause();
+      } else if (section.getBoundingClientRect().top < window.innerHeight && section.getBoundingClientRect().bottom > 0) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
   return (
-    <header className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
+    <header ref={sectionRef} className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
       {/* Fond Vidéo */}
       <div className="absolute top-0 left-0 w-full h-full bg-black">
         <video 
+          ref={videoRef}
           poster="https://placehold.co/1920x1080/F9F7F5/333333?text=Chargement..." 
           className="absolute z-0 w-auto min-w-full min-h-full max-w-none hero-video" 
           playsInline 
@@ -11,7 +61,7 @@ const HeroSection = () => {
           muted 
           loop
         >
-          <source src="https://drive.google.com/file/d/17583fUQtP5tbMJtHY8kIlUO5ElYHtZ26/preview" type="video/mp4" />
+          <source src="https://lafabriquepepps.fr/VIDEOS/LP_webi_page1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
