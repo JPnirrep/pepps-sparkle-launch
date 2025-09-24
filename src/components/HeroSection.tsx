@@ -60,13 +60,13 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <header ref={sectionRef} className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
+    <header ref={sectionRef} className="relative h-screen md:min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
       {/* Fond Vidéo */}
       <div className="absolute top-0 left-0 w-full h-full bg-black">
         <video 
           ref={videoRef}
           poster="https://placehold.co/1920x1080/F9F7F5/333333?text=Chargement..." 
-          className="absolute z-0 w-auto min-w-full min-h-full max-w-none hero-video" 
+          className="absolute inset-0 z-0 hero-video" 
           playsInline 
           autoPlay 
           muted 

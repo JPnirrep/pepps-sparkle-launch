@@ -131,6 +131,14 @@ All colors MUST be HSL.
     height: 100%;
   }
   
+  /* Responsive pour mobile */
+  @media (max-width: 768px) {
+    .hero-video {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  
   /* Animation pour les CTA */
   .pepps-btn {
     background: linear-gradient(135deg, hsl(var(--corail-pepps)), hsl(var(--corail-pepps) / 0.9));
