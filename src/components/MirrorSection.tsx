@@ -6,6 +6,9 @@ const MirrorSection = () => {
       text: "Vous avez des idées lumineuses, mais la peur du jugement vous paralyse au moment de les partager."
     },
     {
+      text: "Vous reportez sans cesse le moment de préparer, car la montagne de travail et la peur de mal faire vous semblent insurmontables."
+    },
+    {
       text: "Vous préparez vos interventions à l'extrême, mais une fois lancé(e), vous perdez vos moyens face à un regard ou une question imprévue."
     },
     {
@@ -30,6 +33,10 @@ const MirrorSection = () => {
                 {point.text.includes('peur du jugement') ? (
                   <>
                     Vous avez des idées lumineuses, mais <strong>la peur du jugement vous paralyse</strong> au moment de les partager.
+                  </>
+                ) : point.text.includes('reportez sans cesse') ? (
+                  <>
+                    Vous <strong>reportez sans cesse</strong> le moment de préparer, car <strong>la montagne de travail et la peur de mal faire</strong> vous semblent insurmontables.
                   </>
                 ) : point.text.includes('perdez vos moyens') ? (
                   <>
