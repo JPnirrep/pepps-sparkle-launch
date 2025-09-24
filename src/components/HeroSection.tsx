@@ -1,14 +1,10 @@
-import { useRef } from 'react';
-
 const HeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <header className="relative h-[90vh] md:h-screen overflow-hidden flex items-center justify-center text-center text-white">
       {/* Fond Vidéo */}
       <div className="absolute top-0 left-0 w-full h-full bg-black">
         <video 
-          ref={videoRef}
           poster="https://placehold.co/1920x1080/F9F7F5/333333?text=Chargement..." 
           className="absolute inset-0 w-full h-full object-cover z-0" 
           playsInline 
