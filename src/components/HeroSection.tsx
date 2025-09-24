@@ -3,10 +3,11 @@ const HeroSection = () => {
   return (
     <header className="relative h-[90vh] md:h-screen overflow-hidden flex items-center justify-center text-center text-white">
       {/* Fond Vidéo */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black">
+      <div className="absolute top-0 left-0 w-full h-full bg-black overflow-hidden">
         <video 
           poster="https://placehold.co/1920x1080/F9F7F5/333333?text=Chargement..." 
-          className="absolute inset-0 w-full h-full object-contain xl:object-cover z-0" 
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover z-0" 
+          style={{ aspectRatio: '16/9' }}
           playsInline 
           autoPlay 
           muted 
