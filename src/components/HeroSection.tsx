@@ -6,7 +6,7 @@ const HeroSection = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-black">
         <video 
           poster="https://placehold.co/1920x1080/F9F7F5/333333?text=Chargement..." 
-          className="absolute inset-0 w-full h-full object-cover z-0" 
+          className="absolute inset-0 w-full h-full object-contain xl:object-cover z-0" 
           playsInline 
           autoPlay 
           muted 
