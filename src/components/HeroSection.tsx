@@ -1,72 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 const HeroSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    const section = sectionRef.current;
-    
-    if (!video || !section) return;
-
-    // Seamless loop handler
-    const handleTimeUpdate = () => {
-      // Restart video slightly before it ends to avoid black screen
-      if (video.currentTime >= video.duration - 0.1) {
-        video.currentTime = 0;
-      }
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Restart video from beginning when entering view
-            video.currentTime = 0;
-            video.play().catch(() => {
-              // Handle autoplay restrictions
-            });
-          } else {
-            // Pause when leaving view
-            video.pause();
-          }
-        });
-      },
-      { threshold: 0.5 } // Trigger when 50% of section is visible
-    );
-
-    observer.observe(section);
-
-    // Handle page visibility changes
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        video.pause();
-      } else if (section.getBoundingClientRect().top < window.innerHeight && section.getBoundingClientRect().bottom > 0) {
-        video.currentTime = 0;
-        video.play().catch(() => {});
-      }
-    };
-
-    // Add seamless loop event listener
-    video.addEventListener('timeupdate', handleTimeUpdate);
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    return () => {
-      observer.disconnect();
-      video.removeEventListener('timeupdate', handleTimeUpdate);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, []);
 
   return (
-    <header ref={sectionRef} className="relative h-screen md:min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
+    <header className="relative h-[90vh] md:h-screen overflow-hidden flex items-center justify-center text-center text-white">
       {/* Fond Vidéo */}
       <div className="absolute top-0 left-0 w-full h-full bg-black">
         <video 
           ref={videoRef}
           poster="https://placehold.co/1920x1080/F9F7F5/333333?text=Chargement..." 
-          className="absolute inset-0 z-0 hero-video" 
+          className="absolute inset-0 w-full h-full object-cover z-0" 
           playsInline 
           autoPlay 
           muted 
